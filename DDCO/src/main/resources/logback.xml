@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 30초마다 설정 파일의 변경을 확인하고, 파일이 변경되면 다시 로딩 -->
+<configuration scan="true" scanPeriod="30 seconds">
+	<!-- logback이 정상 종료되도록 -->
+	<shutdownHook />
+
+	<property name="App_LogHome" value="C:/AppLogs/DDCO/logs/" />
+	
+	<!-- console에 찍는 출력 설정  -->
+	<!-- onsoleAppender 클래스는 로그를 OutputStream에 write 하여, 최종적으로 콘솔에 출력되도록 한다  -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+		<!-- 콘솔에 찍히는 로그 포맷 지정  -->
+			<Pattern>
+				<!-- %d{yyyy-MM-dd HH:mm:ss} [%thread] %highlight[%-5level] [%logger:%line] - %msg%n -->
+				 %d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread{10} ] --- [%-5level] [%logger:%line] : %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+	
+	<!-- 
+		RollingFileAppender 는 FileAppender로 부터 상속받은 Appender로 
+		날짜,최대용량 등을 설정하여 지정한 파일명패턴에 따라 로그가 다른 파일에 기록되도록 함
+	 	이를 이용하여 대량의 로그를 효과적으로 기록
+	 	ex) %logger(Logger 이름), %thread(현재 스레드명), %level(로그 레벨), %msg(로그메시지), %n(new line) 등
+	 -->
+	<appender name="FILE-AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${App_LogHome}/DDCO.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		<!-- 파일에 기록할 로그 포맷 지정  -->	
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread{10} ] --- [%-5level] [%logger:%line] : %msg%n
+			</Pattern>
+		</encoder>
+		
+		<!-- 
+			일별로 로깅을 하는데 날짜가 변하면 현재 로깅일을 이 포맷으로 파일명을 변경하고 
+			다시 TestPortal.log 파일로 다시 신규로 로깅함 
+		-->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${App_LogHome}/DDCO-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- 파일용량을 10MB로 하고 용량을 초과하면 인덱스가 붙은상태로 파일명이 새로 생김  -->
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!--  -->
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE-AUDIT" />
+	</root>
+	
+	<!-- <logger name="org.springframework" level="INFO"/> -->
+
+</configuration>
