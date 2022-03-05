@@ -11,6 +11,8 @@
 
 	<!-- 어노테이션 활성화를 위한 설정  -->
 	<mvc:annotation-driven/>
+	<!--  DispatcherSerlvet이 처리하지 못한 요청을 DefaultSerlvet에게 넘겨주는 역할 -->
+	<mvc:default-servlet-handler/>
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
     
