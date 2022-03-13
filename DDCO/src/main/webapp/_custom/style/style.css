@@ -11,6 +11,7 @@
 
 html, body {width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 12px; font-family: NotoSansKR;}
 button {border-width: 1px; font-size: 12px; font-family: NotoSansKR-Regular;}
+button:hover {opacity: 0.8;}
 input {font-size: 12px; color: #000; font-family: NotoSansKR-Regular;}
 ul {padding: 0px;}
 
@@ -21,11 +22,11 @@ ul {padding: 0px;}
 #loginField ul {list-style-type: none; margin: 0px;}
 #loginField #userID {width: 300px; height: 36px; margin: 50.7px 0 10px; padding: 9px 9px 9px 16px; border-radius: 4px; border: solid 1px #dbdfe7; 
 					background-color: #fff; box-sizing: border-box; opacity: 0.3;}
-#loginField #userID:hover {border-color: #339df2; opacity: 1;}
+#loginField #userID:hover {border-color: #339df2;}
 #loginField #userID:focus {outline: solid 1px #339df2; opacity: 1;}
 #loginField #userPW {width: 300px; height: 36px; margin: 0px 0 16px; padding: 9px 9px 9px 16px; border-radius: 4px; border: solid 1px #dbdfe7; 
 					background-color: #fff; box-sizing: border-box; opacity: 0.3;}
-#loginField #userPW:hover {border-color: #339df2; opacity: 1;}
+#loginField #userPW:hover {border-color: #339df2; }
 #loginField #userPW:focus {outline: solid 1px #339df2; opacity: 1;}
 #loginField #loginBtn {width: 300px; height: 40px; margin: 0px; padding: 11px 11px; border-radius: 4px; background-color: #303348; box-sizing: border-box;
 					color: #f4f5fa; font-weight: 500; cursor: pointer;}
