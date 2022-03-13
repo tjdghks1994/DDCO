@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
-html, body {width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 12px; font-family: NotoSansKR-Regular;}
-button {border-width: 1px; font-size: 12px;}
-input {font-size: 12px;}
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('../fonts/NotoSansKR-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NotoSansKR-Regular';
+    src: url('../fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+
+html, body {width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 12px; font-family: NotoSansKR;}
+button {border-width: 1px; font-size: 12px; font-family: NotoSansKR-Regular;}
+input {font-size: 12px; color: #000; font-family: NotoSansKR-Regular;}
 ul {padding: 0px;}
 
 /* 로그인 페이지 */
@@ -12,22 +21,26 @@ ul {padding: 0px;}
 #loginField ul {list-style-type: none; margin: 0px;}
 #loginField #userID {width: 300px; height: 36px; margin: 50.7px 0 10px; padding: 9px 9px 9px 16px; border-radius: 4px; border: solid 1px #dbdfe7; 
 					background-color: #fff; box-sizing: border-box; opacity: 0.3;}
+#loginField #userID:hover {border-color: #339df2; opacity: 1;}
+#loginField #userID:focus {outline: solid 1px #339df2; opacity: 1;}
 #loginField #userPW {width: 300px; height: 36px; margin: 0px 0 16px; padding: 9px 9px 9px 16px; border-radius: 4px; border: solid 1px #dbdfe7; 
 					background-color: #fff; box-sizing: border-box; opacity: 0.3;}
+#loginField #userPW:hover {border-color: #339df2; opacity: 1;}
+#loginField #userPW:focus {outline: solid 1px #339df2; opacity: 1;}
 #loginField #loginBtn {width: 300px; height: 40px; margin: 0px; padding: 11px 11px; border-radius: 4px; background-color: #303348; box-sizing: border-box;
-					color: #f4f5fa; font-weight: 500;}
+					color: #f4f5fa; font-weight: 500; cursor: pointer;}
 #loginField #keepLogin {width: 14px; height: 14px; margin: 14px 4px 24px 0; border-radius: 1px; border: solid 1px #dbdfe7; background-color: #fff; 
-					box-sizing: border-box; vertical-align: sub;}				
-#loginField #keepLogin + span {width: 53px; height: 17px; margin: 12px 81px 23px 0px; font-size: 11px; color: #000;}
+					box-sizing: border-box; vertical-align: sub; cursor: pointer;}				
+#loginField #keepLogin + label {width: 53px; height: 17px; margin: 12px 81px 23px 0px; font-size: 11px; color: #000; cursor: pointer;}
 #loginField #findBtn {width: 146px; height: 36px; margin: 0px 3px 40.9px 0; padding: 9px 14px 9px 14px; border-radius: 4px; border: solid 1px #dbdfe7;
-					background-color: #fff; box-sizing: border-box; opacity: 0.3;}
+					background-color: #fff; box-sizing: border-box; opacity: 0.3; cursor: pointer;}
 #loginField #signUpBtn {width: 146px; height: 36px; margin: 0px 0 40.9px 0px; padding: 9px 48px; border-radius: 4px; border: solid 1px #303348;
-					background-color: #fff; box-sizing: border-box;}
+					background-color: #fff; box-sizing: border-box; cursor: pointer;}
 #loginField #kakaoBtn { width: 300px; height: 40px; margin: 0px 0 12px; padding: 10px 86px 9.8px 20px; border-radius: 4px; background-color: #ffd900;
-					box-sizing: border-box; border: none; color: #2a1617; font-weight: 500;}
+					box-sizing: border-box; border: none; color: #2a1617; font-weight: 500; cursor: pointer;}
 #loginField #kakaoBtn span {width: 102px; height: 18px; margin: 1px 0 1.2px 0px; font-size: 12px; font-weight: 600; line-height: 1.5; color: #2a1617;}
 #loginField #kakaoBtn img { width: 22px; height: 20.2px; margin: 0 57px 0 0; vertical-align: middle;}
 #loginField #naverBtn { width: 300px; height: 40px; margin: 0px; padding: 11px 96px 11px 20px; border-radius: 4px; background-color: #1ec800;
-					box-sizing: border-box; border: none; color: #fff; font-weight: 500;}
+					box-sizing: border-box; border: none; color: #fff; font-weight: 500; cursor: pointer;}
 #loginField #naverBtn span {  width: 80px; height: 18px; margin: 0 0 0 0px;}
 #loginField #naverBtn img { width: 18px; height: 16.5px; margin: 0px 72px 1.5px 0; vertical-align: middle;}

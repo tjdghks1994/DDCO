@@ -18,14 +18,14 @@
 						<input type="text" name="userID" id="userID" placeholder="ID" autofocus="autofocus">
 					</li>
 					<li>
-						<input type="text" name="userPW" id="userPW" placeholder="Password">
+						<input type="password" name="userPW" id="userPW" placeholder="Password">
 					</li>
 					<li>
 						<button type="submit" id="loginBtn">Login</button>
 					</li>
 					<li style="text-align: left;">
 						<input type="checkbox" name="keepLogin" id="keepLogin">
-						<span>로그인 상태 유지</span>
+						<label for="keepLogin">로그인 상태 유지</label>
 					</li>
 					<li>
 						<button type="button" name="findIdPw" id="findBtn">아이디/비밀번호 찾기</button>
